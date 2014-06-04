@@ -30,12 +30,13 @@ plot(c$datetime,c$Sub_metering_11,type="l",col="black",
      ylab = "Energy sub metering",xlab="")
 lines(c$datetime,c$Sub_metering_21,col="red")
 lines(c$datetime,c$Sub_metering_31,col="blue")
-
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+       lty=1,col=c("black","red","blue"),cex=0.5,pt.cex=2)
 
 plot(c$datetime,c$vol,type="l",ylab="Voltage",xlab="datetime")
 
 plot(c$datetime,c$reactive_power,type="l",ylab="Global_reactive_power",xlab="datetime")
 
-dev.copy(png,file="plot4.png")
+dev.copy(png,file="plot4.png",bg="white")
 dev.off()
 
