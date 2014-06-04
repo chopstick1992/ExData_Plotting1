@@ -21,6 +21,7 @@ c$vol<-as.character(c$Voltage)
 c$vol<-as.numeric(c$vol)
 c$reactive_power<-as.character(c$Global_reactive_power)
 c$reactive_power<-as.numeric(c$reactive_power)
+png(file="plot4.png", bg="white")
 par(mfcol = c(2,2),mar=c(4,4,1,1))
 
 plot(c$datetime,c$active_power,type="l",ylab="Global Active Power",
@@ -31,12 +32,12 @@ plot(c$datetime,c$Sub_metering_11,type="l",col="black",
 lines(c$datetime,c$Sub_metering_21,col="red")
 lines(c$datetime,c$Sub_metering_31,col="blue")
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
-       lty=1,col=c("black","red","blue"),cex=0.5,pt.cex=2)
+       lty=1,col=c("black","red","blue"),cex=0.75,pt.cex=2)
 
 plot(c$datetime,c$vol,type="l",ylab="Voltage",xlab="datetime")
 
 plot(c$datetime,c$reactive_power,type="l",ylab="Global_reactive_power",xlab="datetime")
 
-dev.copy(png,file="plot4.png",bg="white")
+
 dev.off()
 
